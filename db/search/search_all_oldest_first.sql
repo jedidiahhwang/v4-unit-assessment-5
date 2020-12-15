@@ -1,4 +1,4 @@
-select post_id.id as post_id, title, content, img, profile_pic, date_created, upvotes, username as author_username from helo_posts post_id
-join helo_users u on u.id = post_id.author_id
+select helo_posts.id as post_id, title, content, img, profile_pic, date_created, upvotes, helo_posts.username as author_username from helo_posts
+join helo_users u on u.id = helo_posts.author_id
 where lower(title) like $1
 order by date_created asc;

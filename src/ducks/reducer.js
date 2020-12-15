@@ -6,10 +6,10 @@ const initialState = {
 const UPDATE_USER = "UPDATE_USER";
 const LOGOUT = "LOGOUT";
 
-export function updateUser (user) {
+export function updateUser (username) {
     return {
         type: UPDATE_USER,
-        payload: user
+        payload: username
     }
 }
 
