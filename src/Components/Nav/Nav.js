@@ -4,6 +4,10 @@ import homeLogo from './../../assets/home_logo.png';
 import newLogo from './../../assets/new_logo.png';
 import logoutLogo from './../../assets/shut_down.png';
 import './Nav.css';
+import {Link, withRouter} from "react-router-dom";
+import {connect} from "react-redux";
+import updateUser from "../../ducks/reducer";
+import logout from "../../ducks/reducer";
 
 class Nav extends Component {
   constructor(props) {
@@ -31,16 +35,26 @@ class Nav extends Component {
       return this.props.location.pathname !== '/' &&
         <div className='nav'>
           <div className='nav-profile-container'>
-            <div className='nav-profile-pic'></div>
+            <div className='nav-profile-pic' style={{backgroundImage: url}}></div>
             <p>placeholder username</p>
           </div>
           <div className='nav-links'>
-            <img className='nav-img' src={homeLogo} alt='home' />
-            <img className='nav-img' src={newLogo} alt='new post' />
+            <Link to={`../Dash/Dash`}>
+              <img className='nav-img' src={homeLogo} alt='home' />
+            </Link>
+            <Link to={`../Form/Form`}>
+              <img className='nav-img' src={newLogo} alt='new post' />
+            </Link>
           </div>
-          <img className='nav-img logout' src={logoutLogo} alt='logout' />
+          <Link to={`../Auth/Auth`} onClick={() => this.logout()}>
+            <img className='nav-img logout' src={logoutLogo} alt='logout' />
+          </Link>
         </div>
   }
 }
 
-export default Nav;
+function mapStateToProps(reduxState) {
+  return {...reduxState.user}
+}
+
+export default connect(mapStateToProps)(withRouter(Nav));

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "main": "server/index.js",
-  "proxy": "http://localhost:4000",
+  "proxy": "http://localhost:5000",
   "nodemonConfig": {
     "ext": "sql,js",
     "ignore": [
@@ -16,10 +16,17 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "react": "^16.13.1",
+    "express-session": "^1.17.1",
+    "massive": "^6.6.2",
+    "react": "^16.14.0",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "redux": "^4.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,5 +48,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "<img src=\"https://s3.amazonaws.com/devmountain/readme-logo.png\" width=\"250\" align=\"right\">",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jedidiahhwang/v4-unit-assessment-5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jedidiahhwang/v4-unit-assessment-5/issues"
+  },
+  "homepage": "https://github.com/jedidiahhwang/v4-unit-assessment-5#readme"
 }
